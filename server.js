@@ -44,6 +44,9 @@ app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 //     console.log("database error", error);
 // });
 
+
+app.use(express.static(__dirname + "/"));
+
 app.get("/", function(req, res) {
     res.send("Hello World");
 });
@@ -82,7 +85,7 @@ app.get("/weight", function(req, res) {
 
 var PORT = process.env.PORT || 3000;
 
-app.use(express.static(__dirname + "/"));
+
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
 });
