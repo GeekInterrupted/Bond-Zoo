@@ -19,17 +19,16 @@ Animal = mongoose.model("Animal", Schema);
 
 //connection to mongoose
 
-MONGODB_URI: mongodb: //heroku_twz77bvw:sbq4sb84cpcg42a99ro7evs67d@ds023438.mlab.com:23438/heroku_twz77bvw
-    // mongodb://example:example@ds053312.mongolab.com:53312/todolist'
+MONGODB_URI: mongodb: "//heroku_twz77bvw:sbq4sb84cpcg42a99ro7evs67d@ds023438.mlab.com:23438/heroku_twz77bvw"
 
 
-    mongoose.connect(process.env.MONGOLAB_URI, function(error) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log("mongoose connection succeded");
-        }
-    });
+mongoose.connect(process.env.MONGOLAB_URI, function(error) {
+    if (error) {
+        console.log(error);
+    } else {
+        console.log("mongoose connection succeded");
+    }
+});
 
 var app = express();
 app.use(bodyParser.json()) // support json encoded bodies
