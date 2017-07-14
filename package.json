@@ -1,0 +1,15 @@
+{
+    "name": "bondanimals",
+    "version": "1.0.0",
+    "description": "Classwork",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Olga O'Neal",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.15.3",
+        "mongojs": "^2.4.0"
+    }
+}

@@ -1,0 +1,50 @@
+[{
+        "name": "Cat",
+        "class": "Mammal",
+        "legs": 4,
+        "weight": "25",
+        "petName": "Pussy Galore",
+        "reference": "Goldfinger"
+    },
+    {
+        "name": "Dog",
+        "class": "Mammal",
+        "legs": 4,
+        "weight": "100",
+        "petName": "James Bondog",
+        "reference": "James Bond"
+    },
+    {
+        "name": "Lion",
+        "class": "Mammal",
+        "legs": 4,
+        "weight": "500",
+        "petName": "Dusko Popov",
+        "reference": "Into the Lion's Mouth"
+    },
+    {
+        "name": "Octopuss",
+        "class": "Cephalopoda",
+        "legs": 8,
+        "weight": "250",
+        "petName": "Octopussy",
+        "reference": "Octopussy"
+    },
+    {
+        "name": "Shark",
+        "class": "Chondrichthyes",
+        "legs": 0,
+        "weight": "1250",
+        "petName": "Sharkey",
+        "reference": "Licence to Kill"
+    },
+    {
+        "name": "Beetle",
+        "class": "Insecta",
+        "legs": 6,
+        "weight": "0.25",
+        "petName": "Francisco Scaramanga",
+        "reference": "The Man with the Golden Gun"
+    }
+
+]
