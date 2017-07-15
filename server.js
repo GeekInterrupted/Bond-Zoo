@@ -44,7 +44,7 @@ app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 app.use(express.static(__dirname + "/"));
 
 app.get("/", function(req, res) {
-    res.render("index");
+    res.send("hello world!");
 });
 
 app.get("/all", function(req, res) {
