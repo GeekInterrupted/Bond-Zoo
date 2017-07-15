@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 app.use(express.static(__dirname + "/"));
 
 app.get("/", function(req, res) {
-    res.send(index.html);
+    res.render("index");
 });
 
 app.get("/test", function(req, res) {
@@ -29,6 +29,6 @@ app.get("/test", function(req, res) {
 
 
 
-app.listen(process.env.PORT || 3000, function() {
+app.listen(PORT, function() {
     console.log("Express server listening on port : " + PORT);
 });
