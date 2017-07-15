@@ -17,18 +17,30 @@ Schema = new mongoose.Schema({
 
 Animal = mongoose.model("Animal", Schema);
 
-mongoose.Promise = Promise;
 
-// Database configuration with mongoose
-mongoose.connect("mongodb://heroku_twz77bvw:sbq4sb84cpcg42a99ro7evs67d@ds023438.mlab.com:23438/heroku_twz77bvw");
-var db = mongoose.connection;
+// Here we find an appropriate database to connect to, defaulting to
+// localhost if we don't find one.  
 
+var uristring =
+    process.env.MONGODB_URI || 'mongodb://localhost/bondanimals';
 
-// Show any Mongoose errors
-db.on('error', function(err) {
-    console.log('Mongoose Error: ', err);
+// The http server will listen to an appropriate port, or default to
+// port 5000.
+
+var theport = process.env.PORT || 5000;
+
+// Makes connection asynchronously.  Mongoose will queue up database
+// operations and release them when the connection is complete.
+
+mongoose.connect(uristring, function(err, res) {
+    if (err) {
+        console.log('ERROR connecting to: ' + uristring + '. ' + err);
+    } else {
+        console.log('Succeeded connected to: ' + uristring);
+    }
+
 });
-
+var db = mongoose.connection;
 
 var app = express();
 app.use(bodyParser.json()) // support json encoded bodies
