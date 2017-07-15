@@ -39,7 +39,7 @@ app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 var databaseUrl = "23438/heroku_twz77bvw";
 var collections = ["animals"];
 
-var db = mongoose(databaseUrl, collections);
+var db = mongoose.connect(databaseUrl, collections);
 
 // db.on("error", function(error) {
 //     console.log("database error", error);
