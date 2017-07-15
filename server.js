@@ -67,11 +67,6 @@ app.get("/all", function(req, res) {
 
 });
 
-
-
-
-
-
 app.get("/name", function(req, res) {
     Animal.find({}).sort({ name: 1 }).exec(function(error, found) {
         if (error) {
@@ -83,13 +78,13 @@ app.get("/name", function(req, res) {
 });
 
 app.get("/weight", function(req, res) {
-    Animal.find({}.sort({ weight: -1 }, function(error, found) {
+    Animal.find({}).sort({ weight: -1 }).exec(function(error, found) {
         if (error) {
             console.log(error);
         } else {
             res.json(found);
         }
-    }));
+    });
 });
 
 app.listen(PORT, function() {
