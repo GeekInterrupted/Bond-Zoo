@@ -56,7 +56,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/all", function(req, res) {
-    db.bondanimals.find({},
+    Animal.find({},
         function(error, found) {
             if (error) {
                 console.log(error);
@@ -68,7 +68,7 @@ app.get("/all", function(req, res) {
 });
 
 app.get("/name", function(req, res) {
-    db.bondanimals.find().sort({ name: 1 }, function(error, found) {
+    db.animals.find().sort({ name: 1 }, function(error, found) {
         if (error) {
             console.log(error);
         } else {
@@ -78,7 +78,7 @@ app.get("/name", function(req, res) {
 });
 
 app.get("/weight", function(req, res) {
-    db.bondanimals.find().sort({ weight: -1 }, function(error, found) {
+    db.animals.find().sort({ weight: -1 }, function(error, found) {
         if (error) {
             console.log(error);
         } else {
