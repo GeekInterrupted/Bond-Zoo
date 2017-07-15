@@ -12,5 +12,9 @@ app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", function(req, res) {
-    res.render("index");
+    res.send(index.html);
 });
+
+app.get("/test", function(req, res) {
+    res.send("Hello World");
+})
