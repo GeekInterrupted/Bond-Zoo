@@ -22,6 +22,8 @@ Animal = mongoose.model("Animal", Schema);
 MONGOLAB_URI: "mongodb://heroku_twz77bvw:sbq4sb84cpcg42a99ro7evs67d@ds023438.mlab.com:23438/heroku_twz77bvw"
 
 
+
+
 mongoose.connect(process.env.MONGOLAB_URI, function(error) {
     if (error) {
         console.log(error);
@@ -34,10 +36,10 @@ var app = express();
 app.use(bodyParser.json()) // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 
-// var databaseUrl = "localhost:27017/bondanimals";
-// var collections = ["animals"];
+var databaseUrl = "23438/heroku_twz77bvw";
+var collections = ["animals"];
 
-// var db = mongojs(databaseUrl, collections);
+var db = mongodb(databaseUrl, collections);
 
 // db.on("error", function(error) {
 //     console.log("database error", error);
