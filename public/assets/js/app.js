@@ -12,7 +12,7 @@ $.getJSON("/all", function(data) {
 $("#sort-weight").on("click", function() {
     $("#pets-table").empty();
     $("#pets-table").append("<tr><th>Name</th><th>Class</th><th>Num of Legs</th>" +
-        "<th id='active'>Weight</th><th>But I Call It..</th</tr>");
+        "<th id='active'>Weight (lbs)</th><th>But I Call It..</th</tr>");
 
     $.getJSON("/weight", function(data) {
         console.log(data);
@@ -29,7 +29,7 @@ $("#sort-weight").on("click", function() {
 $("#sort-name").on("click", function() {
     $("#pets-table").empty();
     $("#pets-table").append("<tr><th id='active'>Name</th><th>Class</th><th>Num of Legs</th>" +
-        "<th>Weight</th><th>But I Call It..</th</tr>");
+        "<th>Weight (lbs)</th><th>But I Call It..</th</tr>");
 
     $.getJSON("/name", function(data) {
         console.log(data);
