@@ -19,32 +19,27 @@ Animal = mongoose.model("Animal", Schema);
 
 //connection to mongoose
 
-MONGOLAB_URI: "mongodb://heroku_twz77bvw:sbq4sb84cpcg42a99ro7evs67d@ds023438.mlab.com:23438/heroku_twz77bvw"
+// MONGOLAB_URI: "mongodb://heroku_twz77bvw:sbq4sb84cpcg42a99ro7evs67d@ds023438.mlab.com:23438/heroku_twz77bvw"
 
+// Database Configuration with Mongoose
+// ---------------------------------------------------------------------------------------------------------------
+// Connect to localhost if not a production environment
+if (process.env.NODE_ENV == 'production') {
+    mongoose.connect('mongodb://heroku_twz77bvw:sbq4sb84cpcg42a99ro7evs67d@ds023438.mlab.com:23438/heroku_twz77bvw');
+} else {
+    mongoose.connect('mongodb://localhost/27107');
+}
+var db = mongoose.connection;
 
-
-
-mongoose.connect(process.env.MONGOLAB_URI, function(error) {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log("mongoose connection succeded");
-    }
+// Show any Mongoose errors
+db.on('error', function(err) {
+    console.log('Mongoose Error: ', err);
 });
+
 
 var app = express();
 app.use(bodyParser.json()) // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
-
-var databaseUrl = "23438/heroku_twz77bvw";
-var collections = ["animals"];
-
-var db = mongoose.connect(databaseUrl, collections);
-
-// db.on("error", function(error) {
-//     console.log("database error", error);
-// });
-
 
 app.use(express.static(__dirname + "/"));
 
