@@ -10,10 +10,10 @@ var app = express();
 app.use(bodyParser.json()) // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 
-app.use(express.static(__dirname + "/"));
+app.use(express.static(__dirname + "/public"));
 
 app.get("/", function(req, res) {
-    res.render("index.html");
+    res.render("index");
 });
 
 app.get("/test", function(req, res) {
