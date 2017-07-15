@@ -68,7 +68,7 @@ app.get("/all", function(req, res) {
 });
 
 app.get("/name", function(req, res) {
-    Animal.find().sort({ name: 1 }, function(error, found) {
+    Animal.sort({ name: 1 }, function(error, found) {
         if (error) {
             console.log(error);
         } else {
@@ -78,7 +78,7 @@ app.get("/name", function(req, res) {
 });
 
 app.get("/weight", function(req, res) {
-    Animal.find().sort({ weight: -1 }, function(error, found) {
+    Animal.sort({ weight: -1 }, function(error, found) {
         if (error) {
             console.log(error);
         } else {
